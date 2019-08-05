@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 const recipeSchema = Schema({
   name: { type: String, required: true },
   img: String,
-  ingredients: [String],
-  directions: [String],
-  tags: [String]
+  ingredients: [{ type: String }],
+  directions: [{ type: String }],
+  tags: [{ type: String }]
 });
 
 const Recipe = mongoose.model('Recipe', recipeSchema);

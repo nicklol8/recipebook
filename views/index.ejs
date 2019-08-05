@@ -10,10 +10,9 @@
       <h4>This is where the recipes go!</h4>
       <ul>
         <% for(let i = 0; i < recipes.length; i++ ) { %>
-        <li><%= recipes[i].name%></li>
+        <li><a href="/recipes/<%=recipes[i].id%>"><%= recipes[i].name%></a></li>
         <% } %>
       </ul>
-      <h4>And here is another one!</h4>
       <a href="/recipes/new"><h6>Why not add one of your own?</h6></a>
     </div>
   </body>

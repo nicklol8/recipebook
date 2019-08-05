@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Recipe Book</title>
+  </head>
+  <body>
+    <h1>Edit Recipe Page</h1>
+    <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
+      <input type="text" name="name" value="<%= recipe.name %>" />
+      <input type="text" name="img" value="<%= recipe.img %>" />
+      <input type="text" name="ingredients" value="<%= recipe.ingredients %>" />
+      <input type="text" name="directions" value="<%= recipe.directions %>" />
+      <input type="text" name="tags" value="<%= recipe.tags %>" />
+      <input type="submit" value="Edit Recipe" />
+    </form>
+  </body>
+</html>
