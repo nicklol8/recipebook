@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Recipe Book</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/recipes">Nick's Recipe Book</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>Login</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <h4>What should we make today?</h4>
+    <div class="container">
+      <div class="row">
+        <% recipes.forEach((recipe) => { %>
+        <div class="col s4">
+          <a href="/recipes/<%=recipe.id%>">
+            <div class="card">
+              <div class="card-image">
+                <img src="<%=recipe.img%>" />
+              </div>
+              <div class="card-content">
+                <%=recipe.name%>
+              </div>
+            </div>
+          </a>
+        </div>
+        <% }) %>
+      </div>
+      <a href="/recipes/new"><h6>Why not add one of your own?</h6></a>
+    </div>
+  </body>
+</html>

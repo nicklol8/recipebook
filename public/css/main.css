@@ -1,4 +1,21 @@
-.card {
-  max-width: 30%;
-  max-height: 50px;
+#splash-page {
+  background-image: url('https://i.imgur.com/JX71uNA.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#splash-page h1 {
+  color: white;
+  font-family: 'Quintessential', cursive;
+}
+nav {
+  background-color: peachpuff;
+}
+#ingredients {
+  background-color: rgba(255, 218, 185, 0.3);
+}
+.list {
+  font-family: 'Montserrat', sans-serif;
+}
+.section-header {
+  font-family: 'Cantarell', sans-serif;
 }

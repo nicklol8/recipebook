@@ -24,9 +24,7 @@ app.use('/recipes', recipeController);
 // Routes
 //localhost:3000
 app.get('/', (req, res) => {
-  Recipes.find({}, (err, allRecipes) => {
-    res.render('index.ejs', { recipes: allRecipes });
-  });
+  res.render('splash.ejs');
 });
 
 // SEED

@@ -2,6 +2,13 @@ const express = require('express');
 const recipes = express.Router();
 const Recipe = require('../models/recipe.js');
 
+// index
+recipes.get('/', (req, res) => {
+  Recipe.find({}, (err, allRecipes) => {
+    res.render('recipes/index.ejs', { recipes: allRecipes });
+  });
+});
+
 // new
 recipes.get('/new', (req, res) => {
   res.render('recipes/new.ejs');
