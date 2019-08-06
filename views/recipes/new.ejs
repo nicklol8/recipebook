@@ -3,16 +3,61 @@
   <head>
     <meta charset="utf-8" />
     <title>Recipe Book</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
   <body>
-    <h1>New Recipe Page</h1>
-    <form action="/recipes" method="POST">
-      <input type="text" name="name" placeholder="Name" />
-      <input type="text" name="img" placeholder="Image link" />
-      <input type="text" name="ingredients" placeholder="Ingredient list" />
-      <input type="text" name="directions" placeholder="directions" />
-      <input type="text" name="tags" placeholder="tags" />
-      <input type="submit" value="Add Recipe" />
-    </form>
+    <div class="container">
+      <h1>New Recipe Page</h1>
+      <form class="col s12" action="/recipes" method="POST">
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" name="name" />
+            <label class="" for="name">Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" name="img" />
+            <label class="" for="img">Link to Image</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea
+              name="ingredients"
+              class="materialize-textarea"
+            ></textarea>
+            <label class="" for="ingredients"
+              >Ingredient List: (Separate with commas)</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea name="steps" class="materialize-textarea"></textarea>
+            <label class="" for="steps"
+              >Directions: (Separate steps with >>)</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" name="tags" />
+            <label class="" for="tags">Tags: (Separate with commas)</label>
+          </div>
+          <div class="input-field col s6">
+            <button
+              class="btn waves-effect waves-light"
+              type="submit"
+              name="action"
+            >
+              Add New Recipe
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

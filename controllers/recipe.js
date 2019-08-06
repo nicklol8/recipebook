@@ -30,6 +30,7 @@ recipes.get('/:id/edit', (req, res) => {
 // create
 recipes.post('/', (req, res) => {
   req.body.ingredients = req.body.ingredients.split(',');
+  req.body.steps = req.body.steps.split('>>');
   req.body.tags = req.body.tags.split(',');
   Recipe.create(req.body, (err, newRecipe) => {
     if (err) {
@@ -49,7 +50,7 @@ recipes.put('/:id', (req, res) => {
         name: req.body.name,
         img: req.body.img,
         ingredients: req.body.ingredients.split(','),
-        directions: req.body.directions,
+        steps: req.body.steps.split('>>'),
         tags: req.body.tags.split(',')
       }
     },

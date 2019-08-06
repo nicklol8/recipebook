@@ -5,7 +5,7 @@ const recipeSchema = Schema({
   name: { type: String, required: true },
   img: String,
   ingredients: [{ type: String }],
-  directions: [{ type: String }],
+  steps: [{ type: String }],
   tags: [{ type: String }]
 });
 

@@ -18,6 +18,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/public'));
 app.use('/recipes', recipeController);
 
 // Routes
@@ -25,6 +26,16 @@ app.use('/recipes', recipeController);
 app.get('/', (req, res) => {
   Recipes.find({}, (err, allRecipes) => {
     res.render('index.ejs', { recipes: allRecipes });
+  });
+});
+
+// SEED
+const seed = require('./models/seed.js');
+const Recipe = require('./models/recipe.js');
+app.get('/seed', (req, res) => {
+  Recipe.create(seed, (err, createdRecipe) => {
+    console.log(createdRecipe);
+    res.redirect('/');
   });
 });
 
