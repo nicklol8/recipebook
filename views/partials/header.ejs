@@ -1,0 +1,16 @@
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/recipes">Nick's Recipe Book</a>
+      <ul id="nav-mobile" class="right">
+        <% if(currentUser) { %>
+        <li><a href="/recipes/new">Add New Recipe</a></li>
+        <li><a href="/session/logout">Logout</a></li>
+        <% } else { %>
+        <li><a href="/users/new">Sign up</a></li>
+        <li><a href="/session/new">Login</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+</header>

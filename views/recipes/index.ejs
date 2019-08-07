@@ -11,17 +11,11 @@
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="/recipes">Nick's Recipe Book</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>Login</li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <% include ../partials/header.ejs %>
     <h4>What should we make today?</h4>
+    <% if(currentUser) { %>
+    <h6>Welcome back <%= currentUser.username %></h6>
+    <% } %>
     <div class="container">
       <div class="row">
         <% recipes.forEach((recipe) => { %>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign In</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <% include ../partials/header.ejs %>
+    <div class="container">
+      <form class="col s10" action="/session" method="POST">
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" name="username" />
+            <label for="username">Username:</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="password" name="password" />
+            <label for="password">Password:</label>
+          </div>
+        </div>
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+        >
+          Log In
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

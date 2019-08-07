@@ -19,3 +19,6 @@ nav {
 .section-header {
   font-family: 'Cantarell', sans-serif;
 }
+.card img {
+  max-height: 400px;
+}

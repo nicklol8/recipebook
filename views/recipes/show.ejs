@@ -12,27 +12,17 @@
     <link href="https://fonts.googleapis.com/css?family=Cantarell|Montserrat&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-          <nav>
-            <div class="nav-wrapper">
-              <a href="/recipes">Nick's Recipe Book</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li>Login</li>
-              </ul>
-            </div>
-          </nav>
-      </header>
-      
+      <% include ../partials/header.ejs %>
     <div class="container">
-      <div class="section">
+      <div class="section container">
       <h1><%=recipe.name%></h1>
       <img width="500px" src="<%=recipe.img%>" />
       </div>
 
       <div class="section" id="ingredients">
       <div class="container">
-        <h5 class="section-header">Ingredients</h5>
         <div class="row">
+        <h5 class="section-header col s12 offset-s4">Ingredients</h5>
           <div class="col s6 list">
               <ul>
         <% for(i = 0; i < recipe.ingredients.length/2; i++) { %>
@@ -65,13 +55,13 @@
       <span class="chip"><%= tag%> </span>
       <% }) %>
     </div>
-
+<% if(currentUser && currentUser.username === 'Nick') { %>
     <h4><a href="/recipes/<%=recipe.id%>/edit">Edit This Recipe</a></h4>
 
     <form action="/recipes/<%=recipe.id%>?_method=DELETE" method="POST">
       <input type="submit" value="Remove Recipe" />
     </form>
-
+    <% } %>
     <h3><a href="/recipes">Back to Index</a></h3>
   </body>
 </html>

@@ -1,23 +1,32 @@
 const express = require('express');
 const recipes = express.Router();
 const Recipe = require('../models/recipe.js');
+const session = require('express-session');
 
 // index
 recipes.get('/', (req, res) => {
   Recipe.find({}, (err, allRecipes) => {
-    res.render('recipes/index.ejs', { recipes: allRecipes });
+    res.render('recipes/index.ejs', {
+      recipes: allRecipes,
+      currentUser: req.session.currentUser
+    });
   });
 });
 
 // new
 recipes.get('/new', (req, res) => {
-  res.render('recipes/new.ejs');
+  res.render('recipes/new.ejs', {
+    currentUser: req.session.currentUser
+  });
 });
 
 // show
 recipes.get('/:id', (req, res) => {
   Recipe.findById(req.params.id, (err, foundRecipe) => {
-    res.render('recipes/show.ejs', { recipe: foundRecipe });
+    res.render('recipes/show.ejs', {
+      recipe: foundRecipe,
+      currentUser: req.session.currentUser
+    });
   });
 });
 
@@ -28,7 +37,8 @@ recipes.get('/:id/edit', (req, res) => {
       console.log(err);
     } else {
       res.render('recipes/edit.ejs', {
-        recipe: foundRecipe
+        recipe: foundRecipe,
+        currentUser: req.session.currentUser
       });
     }
   });

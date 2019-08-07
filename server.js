@@ -3,8 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const session = require('express-session');
 const recipeController = require('./controllers/recipe.js');
-const Recipes = require('./models/recipe.js');
+const usersController = require('./controllers/users.js');
+const sessionsController = require('./controllers/sessions.js');
 const methodOverride = require('method-override');
 
 //Database
@@ -18,8 +20,17 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(
+  session({
+    secret: 'feedmeseymour', //a random string do not copy this value or your stuff will get hacked
+    resave: false,
+    saveUninitialized: false
+  })
+);
 app.use(express.static(__dirname + '/public'));
 app.use('/recipes', recipeController);
+app.use('/users', usersController);
+app.use('/session', sessionsController);
 
 // Routes
 //localhost:3000
