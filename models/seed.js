@@ -1,7 +1,7 @@
 let seedRecipes = [
   {
     name: 'Banana Bread',
-    img: 'https://i.imgur.com/OnSdrDp.jpg',
+    img: 'https://i.imgur.com/OnSdrDp.jpg?1',
     ingredients: [
       '3 Ripe Bananas',
       '1/3 cup melted butter',

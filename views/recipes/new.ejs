@@ -8,58 +8,65 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
     <% include ../partials/header.ejs %>
-    <div class="container">
-      <h1>New Recipe Page</h1>
-      <form class="col s12" action="/recipes" method="POST">
-        <div class="row">
-          <div class="input-field col s6">
-            <input type="text" name="name" />
-            <label class="" for="name">Name</label>
+    <main>
+      <div class="container">
+        <h1>New Recipe Page</h1>
+        <form class="col s12" action="/recipes" method="POST">
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" name="name" />
+              <label class="" for="name">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" name="img" />
+              <label class="" for="img">Link to Image</label>
+            </div>
           </div>
-          <div class="input-field col s6">
-            <input type="text" name="img" />
-            <label class="" for="img">Link to Image</label>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                name="ingredients"
+                class="materialize-textarea"
+              ></textarea>
+              <label class="" for="ingredients"
+                >Ingredient List: (Separate with commas)</label
+              >
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea
-              name="ingredients"
-              class="materialize-textarea"
-            ></textarea>
-            <label class="" for="ingredients"
-              >Ingredient List: (Separate with commas)</label
-            >
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea name="steps" class="materialize-textarea"></textarea>
+              <label class="" for="steps"
+                >Directions: (Separate steps with >>)</label
+              >
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea name="steps" class="materialize-textarea"></textarea>
-            <label class="" for="steps"
-              >Directions: (Separate steps with >>)</label
-            >
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" name="tags" />
+              <label class="" for="tags">Tags: (Separate with commas)</label>
+            </div>
+            <div class="input-field col s6">
+              <button
+                class="btn waves-effect waves-light"
+                type="submit"
+                name="action"
+              >
+                Add New Recipe
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input type="text" name="tags" />
-            <label class="" for="tags">Tags: (Separate with commas)</label>
-          </div>
-          <div class="input-field col s6">
-            <button
-              class="btn waves-effect waves-light"
-              type="submit"
-              name="action"
-            >
-              Add New Recipe
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </main>
+    <% include ../partials/footer.ejs %>
   </body>
 </html>

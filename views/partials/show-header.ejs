@@ -3,7 +3,9 @@
     <div class="nav-wrapper">
       <a class="name" href="/recipes">Nick's Recipe Book</a>
       <ul id="nav-mobile" class="right">
-        <% if(currentUser) { %>
+        <% if(currentUser && currentUser.username === 'Nick') { %>
+        <li><a href="/recipes/<%=recipe.id%>/edit">Edit This Recipe</a></li>
+        <% } %> <% if(currentUser) { %>
         <li><a href="/recipes/new">Add New Recipe</a></li>
         <li><a href="/session/logout">Logout</a></li>
         <% } else { %>
@@ -14,3 +16,11 @@
     </div>
   </nav>
 </header>
+<!-- 
+<% if(currentUser && currentUser.username === 'Nick') { %>
+<h4><a href="/recipes/<%=recipe.id%>/edit">Edit This Recipe</a></h4>
+
+<form action="/recipes/<%=recipe.id%>?_method=DELETE" method="POST">
+  <input type="submit" value="Remove Recipe" />
+</form>
+<% } %> -->

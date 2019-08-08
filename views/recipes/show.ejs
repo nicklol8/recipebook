@@ -10,16 +10,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Cantarell|Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap"rel="stylesheet"/>
   </head>
   <body>
-      <% include ../partials/header.ejs %>
+      <% include ../partials/show-header.ejs %>
     <div class="container">
       <div class="section container">
-      <h1><%=recipe.name%></h1>
+      <h1 class="list"><%=recipe.name%></h1>
       <img width="500px" src="<%=recipe.img%>" />
       </div>
-
-      <div class="section" id="ingredients">
+      <div class="divider"></div>
+      <div class="section z-depth-2" id="ingredients">
       <div class="container">
         <div class="row">
         <h5 class="section-header col s12 offset-s4">Ingredients</h5>
@@ -55,13 +56,7 @@
       <span class="chip"><a href="/recipes/search/<%=tag%>"><%= tag%></a> </span>
       <% }) %>
     </div>
-<% if(currentUser && currentUser.username === 'Nick') { %>
-    <h4><a href="/recipes/<%=recipe.id%>/edit">Edit This Recipe</a></h4>
 
-    <form action="/recipes/<%=recipe.id%>?_method=DELETE" method="POST">
-      <input type="submit" value="Remove Recipe" />
-    </form>
-    <% } %>
-    <h3><a href="/recipes">Back to Index</a></h3>
+    <% include ../partials/footer.ejs %>
   </body>
 </html>

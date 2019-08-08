@@ -2,13 +2,22 @@
   background-image: url('https://i.imgur.com/JX71uNA.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
 }
 #splash-page h1 {
   color: white;
-  font-family: 'Quintessential', cursive;
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+}
+#enter-button {
+  background-color: rgb(178, 119, 68);
+  position: absolute;
+  top: 300px;
+  left: 250px;
 }
 nav {
-  background-color: peachpuff;
+  background-color: #57574c;
+  font-family: 'Montserrat', sans-serif;
 }
 #ingredients {
   background-color: rgba(255, 218, 185, 0.3);
@@ -19,6 +28,44 @@ nav {
 .section-header {
   font-family: 'Cantarell', sans-serif;
 }
+.card {
+  width: 100%;
+  text-align: center;
+}
 .card img {
   max-height: 400px;
+}
+body {
+  background-color: rgba(255, 218, 185, 0.3);
+}
+.name {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  padding-left: 20px;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+footer {
+  background-color: rgba(81, 63, 55, 0.3);
+}
+.chip {
+  background-color: #57574c;
+}
+.chip a {
+  color: white;
+}
+.main-display {
+  break-inside: avoid;
+  column-count: 3;
+}
+.main-display .card {
+  display: inline-block;
+  overflow: visible;
 }

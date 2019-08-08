@@ -9,31 +9,34 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <% include ../partials/header.ejs %>
-    <h4>What should we make today?</h4>
-    <% if(currentUser) { %>
-    <h6>Welcome back <%= currentUser.username %></h6>
-    <% } %>
-    <div class="container">
-      <div class="row">
-        <% recipes.forEach((recipe) => { %>
-        <div class="col s3">
-          <a href="/recipes/<%=recipe.id%>">
-            <div class="card hoverable">
-              <div class="card-image">
-                <img src="<%=recipe.img%>" />
+    <main>
+      <% include ../partials/header.ejs %>
+      <div class="container">
+        <h4>What should we make today?</h4>
+        <div class="main-display">
+          <% recipes.forEach((recipe) => { %>
+          <div class="col s4">
+            <a href="/recipes/<%=recipe.id%>">
+              <div class="card hoverable">
+                <div class="card-image">
+                  <img src="<%=recipe.img%>" />
+                </div>
+                <div class="card-content">
+                  <%=recipe.name%>
+                </div>
               </div>
-              <div class="card-content">
-                <%=recipe.name%>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
+          <% }) %>
         </div>
-        <% }) %>
       </div>
-      <a href="/recipes/new"><h6>Why not add one of your own?</h6></a>
-    </div>
+    </main>
+    <% include ../partials/footer.ejs %>
   </body>
 </html>
