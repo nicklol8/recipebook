@@ -44,7 +44,7 @@
     </ul>
     <div class="divider"></div>
     <h5 class="section-header">Directions:</h5>
-      <ol class="list">
+      <ol class="list flow-text">
         <% recipe.steps.forEach((step) => { %>
         <li>
           <%= step %>
@@ -52,7 +52,7 @@
         <% }) %>
       </ol>
       <% recipe.tags.forEach((tag) => { %>
-      <span class="chip"><%= tag%> </span>
+      <span class="chip"><a href="/recipes/search/<%=tag%>"><%= tag%></a> </span>
       <% }) %>
     </div>
 <% if(currentUser && currentUser.username === 'Nick') { %>

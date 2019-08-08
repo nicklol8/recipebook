@@ -20,6 +20,16 @@ recipes.get('/new', (req, res) => {
   });
 });
 
+// search
+recipes.get('/search/:tag', (req, res) => {
+  Recipe.find({ tags: req.params.tag }, (err, foundTags) => {
+    res.render('recipes/index.ejs', {
+      recipes: foundTags,
+      currentUser: req.session.currentUser
+    });
+  });
+});
+
 // show
 recipes.get('/:id', (req, res) => {
   Recipe.findById(req.params.id, (err, foundRecipe) => {
@@ -54,7 +64,7 @@ recipes.post('/', (req, res) => {
       console.log(err);
     }
     console.log(newRecipe);
-    res.redirect('/');
+    res.redirect('/recipes');
   });
 });
 
@@ -76,7 +86,7 @@ recipes.put('/:id', (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.redirect('/');
+        res.redirect('/recipes');
       }
     }
   );
@@ -87,7 +97,7 @@ recipes.delete('/:id', (req, res) => {
   Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
     if (err) {
       console.log(err);
-    } else res.redirect('/');
+    } else res.redirect('/recipes');
   });
 });
 

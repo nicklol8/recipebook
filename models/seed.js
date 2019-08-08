@@ -76,7 +76,7 @@ let seedRecipes = [
   },
   {
     name: "Baked Mac n' Cheese with Sausage",
-    img: '',
+    img: 'https://i.imgur.com/D1ZNC8B.jpg',
     ingredients: [
       '1 lb macaroni',
       '1 lb Sausage',
@@ -102,7 +102,7 @@ let seedRecipes = [
   },
   {
     name: 'Crunchwrap Supreme',
-    img: '',
+    img: 'https://i.imgur.com/3dCFoNt.jpg',
     ingredients: [
       '1 lb. ground beef',
       '1 teaspoon chili powder',
@@ -130,7 +130,7 @@ let seedRecipes = [
   },
   {
     name: 'Orange Chicken',
-    img: '',
+    img: 'https://i.imgur.com/0W3aQA1.jpg',
     ingredients: [
       '2 large eggs - beaten',
       '1/2 cup plus 1 tbsp. cornstarch, divided',
@@ -163,7 +163,7 @@ let seedRecipes = [
   },
   {
     name: 'Red Lobster Cheddar Biscuits',
-    img: '',
+    img: 'https://i.imgur.com/ly6niyG.jpg',
     ingredients: [
       '3 cup all-purpose flour',
       '2 tablespoon. baking powder',
@@ -185,7 +185,7 @@ let seedRecipes = [
   },
   {
     name: 'Apple Chips',
-    img: '',
+    img: 'https://i.imgur.com/IqJypFq.png',
     ingredients: ['Apples - thinly sliced', 'sugar', 'cinnamon'],
     steps: [
       'FOR OVEN',
@@ -200,7 +200,7 @@ let seedRecipes = [
   },
   {
     name: 'Mozzarella Sticks',
-    img: '',
+    img: 'https://i.imgur.com/lEH7Fcp.jpg',
     ingredients: [
       '6 mozzarella sticks',
       '1 cup panko bread crumbs',
@@ -219,7 +219,7 @@ let seedRecipes = [
   },
   {
     name: 'Maple Bacon Cinnamon Rolls',
-    img: '',
+    img: 'https://i.imgur.com/XGqg8eo.png',
     ingredients: [
       '10 slices bacon',
       '2 tablespoon maple syrup',
@@ -238,6 +238,28 @@ let seedRecipes = [
       'Frost cinnamon rolls and serve warm. '
     ],
     tags: ['breakfast', 'sweet']
+  },
+  {
+    name: 'Alfredo Sauce',
+    img: 'https://i.imgur.com/127s4uR.jpg?1',
+    ingredients: [
+      '1/2 cup butter',
+      '1 pint heavy whipping cream',
+      '4 ounces cream cheese',
+      '1/2 teaspoon minced garlic',
+      ' 1 teaspoon garlic powder',
+      '1 teaspoon italian seasoning',
+      '1/4 teaspoon salt',
+      '1/4 teaspoon pepper',
+      '1 cup grated parmesan cheese'
+    ],
+    directions: [
+      'In medium saucepan add butter, heavy whipping cream, and cream cheese. Cook over medium heat and whisk until melted.',
+      'Add in minced garlic, garlic powder, italian seasoning, salt, and pepper. Whisk until smooth. Add in grated parmesan.',
+      'Bring to a simmer and continue to cook for 5 minutes or until thickened.',
+      'Add in favorite pasta and enjoy!'
+    ],
+    tags: ['sauce']
   }
 ];
 
