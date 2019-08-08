@@ -93,7 +93,7 @@ recipes.put('/:id', (req, res) => {
 });
 
 // delete
-recipes.delete('/:id', (req, res) => {
+recipes.get('/:id/delete', (req, res) => {
   Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
     if (err) {
       console.log(err);
